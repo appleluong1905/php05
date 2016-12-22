@@ -4,11 +4,10 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Register</title>
 
     <!-- Bootstrap Core CSS -->
@@ -40,11 +39,14 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
+
     <script src="js/bootstrap-datepicker.js"></script>
 </head>
 
 <body>
-<?php include 'connect.php';?>
+<?php 
+    include 'connect.php';
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -53,7 +55,7 @@
                         <h3 class="panel-title">Please Register</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="POST" action = "register_complete.php" enctype="multipart/form-data" >
                             <fieldset>
                                 <div class="form-group">
                                     <label>First name</label>
@@ -64,9 +66,21 @@
                                     <input class="form-control" placeholder="Last name" name="last_name" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
+                                    <label>Username</label>
+                                    <input class="form-control" placeholder="User name" name="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="form-control" placeholder="Pass name" name="password" type="password" autofocus>
+                                </div>
+                                 <div class="form-group">
+                                    <label>Avatar</label>
+                                        <input type="file" name="avatar">
+                                    </div>
+                                <div class="form-group">
                                     <label>Birthday</label>
                                     <div class='input-group date' id='birthday'>
-                                        <input type='text' class="form-control" />
+                                        <input type='text' name="birthday" class="form-control" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -75,10 +89,10 @@
                                 <div class="form-group">
                                     <label>Gender</label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="gender" id="gender" value="option2"> Male
+                                        <input type="radio" name="gender" value="1"> Male
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="gender" id="gender" value="option3">Female
+                                        <input type="radio" name="gender"  value="2">Female
                                     </label>
                                 </div>
                                 <div class="form-group">
@@ -97,11 +111,11 @@
             </div>
         </div>
     </div>
-
+    <!-- code PHP -->
     <script type="text/javascript">
-            $(function () {
-                $('#birthday').datepicker();
-            });
+        $(document).ready(function(){
+            $('#birthday').datepicker({ format: 'dd/mm/yyyy' });
+        });
     </script>
 </body>
 
