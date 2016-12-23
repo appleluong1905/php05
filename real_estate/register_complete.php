@@ -2,12 +2,13 @@
     include 'connect.php';
     //Check submit register
     if(isset($_POST["register"])) {
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $password = $_POST['password'];
         $gender = $_POST['gender'];
-        var_dump($gender);
-        exit();
         //
-        $sql = "INSERT INTO users (gender)
-                VALUES ('$gender')";
+        $sql = "INSERT INTO users (first_name, last_name, password, gender)
+                VALUES ('$first_name','$last_name','$password','$gender')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Register success";
