@@ -46,6 +46,7 @@
 <body>
 <?php 
     include 'connect.php';
+    echo date('Y',strtotime("-18 years"));
 ?>
     <div class="container">
         <div class="row">
@@ -114,7 +115,7 @@
     <!-- code PHP -->
     <script type="text/javascript">
         $(document).ready(function(){
-            $('#birthday').datepicker({ format: 'dd/mm/yyyy' });
+            $('#birthday').datepicker({ format: 'mm/dd/yyyy' });
         });
     </script>
 </body>
