@@ -27,6 +27,18 @@
         }
 
     }
+    function check_username($username){
+        include 'connect.php';
+
+        $sql = "SELECT username FROM users WHERE username = '$username'";
+
+        $check = $conn->query($sql);
+        if($check->num_rows){
+            return true;
+        }else{
+            return false;
+        }
+    }
     $first_name= $_REQUEST["first_name"];
     if(check_empty($first_name)){
         echo "Please insert first name";
@@ -35,7 +47,12 @@
     $last_name= $_REQUEST["last_name"];
     
     $username= $_REQUEST["username"];
-    
+
+    if(check_username($username)){
+        echo "This username is exist, please input other username";
+        exit();
+    }
+
     $password= encrypt_password($_REQUEST["password"]);
     
     $avatar= $_FILES["avatar"]["name"];
@@ -68,5 +85,5 @@
     
     $sql = "INSERT INTO users (first_name, last_name, username, password, avatar, birthday, gender, email, phone,created,modified) VALUES ('$first_name','$last_name', '$username', '$password', '$avatar', '$birthday', '$gender', '$email', '$phone', '$created', '$created')";
     if ($conn->query($sql)===TRUE) {
-        echo "success";
+        echo "Register success <a href='login.php'> click here</a> to login";
     }

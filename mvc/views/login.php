@@ -13,7 +13,7 @@
 </tr>
 
 <tr><td><input type="submit"  name="submit" value="submit"></td>
-    <td><a href="dangky.php">Create an account</a><td>
+    <td><a href="views/register.php">Create an account</a><td>
 </tr>
 
 <tr>

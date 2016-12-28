@@ -14,7 +14,7 @@ class Login_Controller
 
 	public function index() 
 	{
-		session_start();
+		@session_start(); 
 		if(isset($_SESSION['useremail'])) {
 			Header("location: index.php?controller=home");
 		}
@@ -36,7 +36,7 @@ class Login_Controller
 	
 	public function logout() 
 	{
-		session_start();
+		@session_start(); 
 	//	if(isset($_SESSION['useremail']))
 	//	  unset($_SESSION['useremail']);
 	    session_destroy();

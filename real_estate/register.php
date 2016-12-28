@@ -46,7 +46,6 @@
 <body>
 <?php 
     include 'connect.php';
-    echo date('Y',strtotime("-18 years"));
 ?>
     <div class="container">
         <div class="row">
@@ -107,6 +106,7 @@
                                  <button type="submit" name = "register" class="btn btn-primary btn-lg">Register</button>
                             </fieldset>
                         </form>
+                        <a href="register.php"> Register here</a>
                     </div>
                 </div>
             </div>

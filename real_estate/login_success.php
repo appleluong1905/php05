@@ -1,3 +1,6 @@
+<?php session_start();
+include 'connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,18 +47,23 @@
 </head>
 
 <body>
-<?php 
-    include 'connect.php';
-?>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Login success</h3>
+                <?php $user = $_SESSION['user_login'];?>
+                <div class="col-lg-4">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <?php $user['first_name'].' '.$user['last_name']?>
+                        </div>
+                        <div class="panel-body">
+                            <p>Username: <?php echo $user["username"]?></p>
+                            <p>Birthday: <?php echo date('d-m-Y',$user['birthday'])?></p>
+                            <p>Avatar: <img src="<?php echo 'uploads/'.$user['avatar'];?>" width="100" height ="100"></p>
+                        </div>
                     </div>
+                        <!-- /.col-lg-4 -->
                 </div>
-            </div>
+                <div><a href="create_post.php"> Click here</a> to create article eal estate</div>
         </div>
     </div>
 
