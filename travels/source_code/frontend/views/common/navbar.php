@@ -17,7 +17,10 @@
 					<a href="index.php?controller=home"><i class="glyphicon glyphicon-home"></i> Home</a>
 				</li>
 				<li>
-					<a href="index.php?controller=tour"><i class="glyphicon glyphicon-modal-window"></i> Tour</a>
+					<a href="index.php?controller=news"><i class="glyphicon glyphicon-globe"></i> News</a>
+				</li>
+				<li>
+					<a href="index.php?controller=tour"><i class="glyphicon glyphicon glyphicon-tasks"></i> Tour</a>
 				</li>
 				<li>
 					<a href="index.php?controller=product"><i class="glyphicon glyphicon-gift"></i> Shop</a>

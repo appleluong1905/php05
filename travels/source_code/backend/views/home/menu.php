@@ -2,6 +2,9 @@
 	<a href="." class="col-6 col-sm-4 col-lg-3">
 		<i class="glyphicon glyphicon-home"></i> Trang chủ
 	</a>
+	<a href="admin.php?controller=news" class="col-6 col-sm-4 col-lg-3">
+		<i class="glyphicon glyphicon-th-list"></i> News
+	</a>
 	<a href="admin.php?controller=tour" class="col-6 col-sm-4 col-lg-3">
 		<i class="glyphicon glyphicon-th-list"></i> Tour
 	</a>
