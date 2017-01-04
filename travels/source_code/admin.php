@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+@ob_start();
 @session_start();
 
 require_once('config/config.php');
@@ -26,3 +27,4 @@ if (file_exists($file)) {
 }
 
 mysql_close($db);
+@ob_end_flush();
