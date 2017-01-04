@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 04, 2017 at 06:12 PM
+-- Generation Time: Jan 04, 2017 at 04:56 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `shop_travels`
+-- Database: `shop_db`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,16 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `position`, `status`) VALUES
+(7, 'iPhone', 1, 1),
+(9, 'Samsung', 0, 1),
+(10, 'HTC', 0, 1),
+(11, 'Sony', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -50,6 +60,14 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `name`, `address`, `phone`, `create_time`, `status`) VALUES
+(7, 'PHP05 class', '38 YÃªn bÃ¡i - ÄÃ  Náºµng', '0904748605', '2014-03-15 14:29:59', 0),
+(8, 'PHP05 class', '38 YÃªn bÃ¡i - ÄÃ  Náºµng', '0904748605', '2014-03-15 14:33:51', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +82,14 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`,`product_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `number`) VALUES
+(3, 7, 5, 1),
+(4, 8, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -82,6 +108,16 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `category_id`, `name`, `summary`, `image`, `price`, `status`) VALUES
+(6, 9, 'Samsung Galaxy Trend Plus S7580', 'Samsung Galaxy Trend Plus S7580', '6-samsung-galaxy-trend-plus-s7580.jpg', 3590000, 1),
+(7, 10, 'HTC 8S', 'HTC 8S', '7-htc-8s.jpg', 3290000, 1),
+(8, 11, 'Sony Xperia M', 'Sony Xperia M', '8-sony-xperia-m.jpg', 4990000, 1),
+(9, 7, 'iPhone 4S 8GB', 'iPhone 4S 8GB', '9-iphone-4s-8gb.jpg', 9990000, 1);
 
 -- --------------------------------------------------------
 
@@ -107,6 +143,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`, `address`, `phone`, `level`, `status`) VALUES
+(1, 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'PHP class', '38 YÃªn bÃ¡i - ÄÃ  Náºµng', '12312312123', 1, 1),
 (2, 'hoaicanhqt@gmail.com', '4297f44b13955235245b2497399d7a93', 'Canh Luong', 'Da Nang', '0988794607', 1, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

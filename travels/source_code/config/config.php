@@ -1,6 +1,6 @@
 <?php
 /** setting **/
-define('BASEURL' , 'http://demo.com/mvc/');
+define('BASEURL' , 'http://training.dev/php05/travels/source_code/');
 define('BASEPATH', dirname(__FILE__) . '/');
 
 /** kết nối MySQL **/
