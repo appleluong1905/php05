@@ -19,7 +19,7 @@ $total_rows = get_total('products', $options);
 $total = ceil($total_rows/$limit);
 
 //data
-$title = 'Thế giới di động';
+$title = 'TOP page';
 $products = get_all('products', $options);
 $pagination = pagination($url, $page, $total);
 $categories = get_all('categories', array(
