@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 04, 2017 at 06:58 PM
+-- Generation Time: Jan 06, 2017 at 07:21 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -32,14 +32,15 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `position` int(11) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `position`, `status`) VALUES
-(12, 'Ba Na', 0, 1);
+(12, 'Ba Na', 0, 1),
+(13, 'Nha Trang', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -95,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `number` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`,`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,15 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `created` int(11) NOT NULL,
   `modified` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `content`, `image`, `post_category_id`, `user_id`, `created`, `modified`) VALUES
+(1, 'Cristian ronaldo', 'description', '', 1, 2, 0, 0),
+(2, 'USA', 'description', '', 2, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -127,7 +136,15 @@ CREATE TABLE IF NOT EXISTS `post_categories` (
   `created` int(11) NOT NULL,
   `modified` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `post_categories`
+--
+
+INSERT INTO `post_categories` (`id`, `name`, `created`, `modified`) VALUES
+(1, 'Sports', 0, 0),
+(2, 'Economics', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -145,14 +162,16 @@ CREATE TABLE IF NOT EXISTS `products` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `category_id`, `name`, `summary`, `image`, `price`, `status`) VALUES
-(10, 12, 'Banh', 'abc', '10-banh.jpg', 12000, 1);
+(10, 12, 'Banh', 'abc', '10-banh.jpg', 12000, 1),
+(11, 12, '6666', '345345', '11-6666.jpg', 33, 1),
+(12, 12, '666', '6666', '12-666.jpg', 544544, 1);
 
 -- --------------------------------------------------------
 
