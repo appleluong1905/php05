@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?php echo isset($title) ? $title : 'Travels'; ?></title>
     
-    <link rel="shortcut icon" href="webroot/images/favicon.png"/>
+    <link rel="shortcut icon" href="webroot/images/favicon.ico"/>
     <!-- Bootstrap -->
     <link href="webroot/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom styles for this template -->
