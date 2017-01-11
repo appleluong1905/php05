@@ -5,7 +5,7 @@ require_once('backend/models/post_categories.php');
 if (isset($_POST['cid'])) {
 	foreach ($_POST['cid'] as $cid) {
 		$cid = intval($cid);
-		categories_delete($cid);
+		post_categories_delete($cid);
 	}
 }
 
